@@ -10,6 +10,7 @@ import {
 } from '../../redux/cart/cart.selectors';
 
 import './checkout.styles.scss';
+import PaystackCheckoutButton from '../../components/paystack-button/paystack-button.component';
 
 const CheckoutPage = ({ cartItems, total }) => (
   <div className='checkout-page'>
@@ -34,6 +35,7 @@ const CheckoutPage = ({ cartItems, total }) => (
       <CheckoutItem key={cartItem.id} cartItem={cartItem} />
     ))}
     <div className='total'>TOTAL: ${total}</div>
+    <PaystackCheckoutButton price={total}/>
   </div>
 );
 
